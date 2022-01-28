@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, INT, JSON, TEXT, ForeignKey
+from sqlalchemy import Boolean, Column, String, INT, JSON, TEXT, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -37,6 +37,7 @@ class Pic(Base):
     pic_id = Column(String(255))
     pic_info = Column(TEXT)
     awsl_mblog = relationship("Mblog", backref="mblog_of_pic")
+    deleted = Column(Boolean)
 
 
 class AwslBlob(Base):
