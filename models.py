@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, String, INT, JSON, TEXT, ForeignKey
+from sqlalchemy import Boolean, Column, DateTime, String, INT, JSON, TEXT, ForeignKey, func
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -48,3 +48,4 @@ class AwslBlob(Base):
     pic_id = Column(String(255), index=True)
     pic_info = Column(TEXT)
     awsl_mblog = relationship("Mblog", backref="mblog_of_blob")
+    create_date = Column(DateTime, server_default=func.now())
