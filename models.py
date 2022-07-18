@@ -39,6 +39,7 @@ class Pic(Base):
     awsl_mblog = relationship("Mblog", backref="mblog_of_pic")
     deleted = Column(Boolean)
     cleaned = Column(Boolean)
+    create_date = Column(DateTime, server_default=func.now())
 
 
 class AwslBlob(Base):
