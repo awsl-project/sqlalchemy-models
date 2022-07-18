@@ -38,6 +38,7 @@ class Pic(Base):
     pic_info = Column(TEXT)
     awsl_mblog = relationship("Mblog", backref="mblog_of_pic")
     deleted = Column(Boolean)
+    cleaned = Column(Boolean)
 
 
 class AwslBlob(Base):
