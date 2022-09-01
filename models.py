@@ -14,6 +14,8 @@ class AwslProducer(Base):
     keyword = Column(String(255))
     profile = Column(JSON)
     max_id = Column(String(255))
+    in_verification = Column(Boolean, default=True)
+    deleted = Column(Boolean)
 
 
 class Mblog(Base):
